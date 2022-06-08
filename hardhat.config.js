@@ -14,10 +14,10 @@ require("hardhat-deploy")
  */
 const RINKEBY_URL = process.env.RINKEBY_URL
 const PRIVATE_KEY = process.env.PRIVATE_KEY
-const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY
+const COINMARKETCAP = process.env.COINMARKETCAP
 const ETHERSACN_API_KEY = process.env.ETHERSACN_API_KEY
 
-console.log(RINKEBY_URL)
+console.log(COINMARKETCAP)
 
 module.exports = {
     solidity: {
@@ -33,13 +33,12 @@ module.exports = {
         },
     },
     gasReporter: {
-        enabled: false,
-        currency: "USD",
+        enabled: true,
         outputFile: "gas-report.txt",
         noColors: true,
         currency: "USD",
-        coinmarketcap: COINMARKETCAP_API_KEY,
-        token: "MATIC",
+        coinmarketcap: COINMARKETCAP,
+        token: "ETH",
     },
     etherscan: {
         apiKey: {
